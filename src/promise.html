@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="../public/lib/axios.js"></script>  -->
+</head>
+
+<body>
+    <script>
+
+        class myPromise {
+            constructor() { }
+            post(url, params,) {
+                return new Promise(function (resolve, reject) {
+                    ajax({
+                        url: 'user/login',
+                        params: {
+                            username: 'xiaoming',
+                            password: '999999'
+                        },
+                        success(res) {
+                            resolve(res);
+                        }
+                    })
+                }).then(res => {
+                    //走resolve方法
+                    console.log(res);
+                }).catch(err => {
+                    //走reject方法
+                    console.log(err);
+                })
+            }
+        }
+        var promise = new myPromise()
+        function promiseLogin(params = {}) {
+            return promise.post('/user/login', params)
+        }
+        promiseLogin({
+            username: 'xiaoming',
+            password: '999999'
+        })
+
+        function ajax({ type = 'POST', url, params = {}, success }) {
+
+            var xhr = new XMLHttpRequest();
+            xhr.open(type, url, true);
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    console.log(xhr.responseText);
+                }
+            }
+            xhr.send(JSON.stringify(params))
+        }
+
+    </script>
+</body>
+
+</html>

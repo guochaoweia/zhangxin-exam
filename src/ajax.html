@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="../node_modules/axios/lib/axios.js"></script> -->
+</head>
+
+<body>
+    <script>
+        //成也回调
+        //败也回调
+        // ajax({
+        //     url: 'user/login',
+        //     params: {
+        //         username: 'xiaoming',
+        //         password: '999999'
+        //     },
+        //     success(res) {
+        //         console.log(res);
+        //     }
+        // })
+        // ajax({
+        //     url: 'user/info',
+
+        //     success(res) {
+        //         console.log(res);
+        //     }
+        // })
+        class myAxios {
+            constructor() {
+
+            }
+            post(url, params) {
+                return new Promise(function (resolve, reject) {
+                    ajax({
+                        url,
+                        params,
+                        success(res) {
+                            resolve(res)
+                        }
+                    })
+                })
+            }
+        }
+        var axios = new myAxios();
+
+        function axiosLogin(params = {}) {
+            return axios.post('/user/login', params)
+        }
+        axiosLogin({
+            username: 'xiaoming',
+            password: '999999'
+        })
+
+        function ajax({ type = 'POST', url, params = {}, success }) {
+
+            var xhr = new XMLHttpRequest();
+            xhr.open(type, url, true);
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    console.log(xhr.responseText);
+                }
+            }
+            xhr.send(JSON.stringify(params))
+        }
+    </script>
+</body>
+
+</html>

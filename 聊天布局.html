@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,h1{
+            margin:0;
+        }
+
+        body{
+            height:100vh;
+        }
+
+        .main{
+            height:100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .main .aside{
+            display: grid;
+            grid-template-rows: 2fr 1fr;
+        }
+
+
+        .main > .container {
+            display: grid;
+            grid-template-rows: 300px auto;
+        }
+
+        .main .footer{
+            height:40px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom:0;
+        }
+
+        .chat {
+            height:100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chat .container {
+            position: absolute;
+            left:0;
+            bottom:0;
+            height:calc(100% - 40px - 42px - 40px);
+            overflow-y: scroll;
+            width:100%;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="aside">
+            <div class="calendar">日历</div>
+            <div class="task">任务列表</div>
+        </div>
+        <div class="container">
+            <div class="notify">通知</div>
+            <div class="chat">
+                <h1 class="title">聊天</h1>
+                <div class="container">
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">这是一条信息</div>
+                    <div class="item">......</div>
+                </div>
+                <footer class="footer">
+                    <input type="请输入信息">
+                    <button>发送消息</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var oFooter = document.querySelector('.footer');
+    oFooter.scrollIntoView(false);
+</script>
+</html>
